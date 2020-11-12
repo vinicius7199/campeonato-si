@@ -1,0 +1,81 @@
+.escuro{
+  background-color: #a3a3a3;
+}
+.claro{
+  background-color: #c7c9c7;
+}
+
+.tabela {
+    border-collapse: collapse;
+}
+
+.tabela__head {
+  line-height: 10px;
+  font-family: opensans;
+  padding: 15px 10px;
+}
+
+.tabela__times {
+  line-height: 25px;
+}
+
+.tabela__head-times {
+  padding: 30px;
+}
+
+.tabela_dados {
+  text-align: center;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin-left: -8px;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Helvetica;
+    
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color:#E1E1E1;
+    color: black;
+  }
+  
+
+
+  .topnav a.campeonato {
+    font-size: 17px;
+    font-family: Helvetica;
+    font-style: bold;
+    background-color: #8B24A6;
+    color: white;
+    
+    
+    
+  }
+
+  .topnav a.btnLogin{
+      float: right;
+      background-color: #8B24A6;
+      color: white;
+      border-radius: 15px 50px;
+  
+  }
+
+  .topnav a.btnLogin:hover{
+    box-shadow: 0 12px 16px 0 rgba(218, 13, 139, 0.24), 0 17px 50px 0 rgba(255, 37, 237, 0.192);
+  }

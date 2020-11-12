@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Campeonato FIT | Admin</title>
+    <div class="topnav">
+        <a class="campeonato">CAMPEONATO FIT</a>
+        <a class="active" href="/">Home</a>
+        <a href="/sobre"> Sobre</a>
+        {% if session.usuario %}
+        <a class="btnLogin" href="/admin">Admin</a>
+        <a class="btnLogin" href="/sair">Sair</a>
+        {% else %}
+        <a class="BtnLogin" href="/entrar">Entrar</a>
+        {% endif %}
+    </div>
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+   <center><h2> Área do ademir</h2></center>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" type="imagem/png" href="../static/favicon.ico" />
+<head>
+    <title>Campeonato FIT | Login </title>
+    <div class="topnav">
+        <a class="campeonato">CAMPEONATO FIT</a>
+        <a class="active" href="/">Home</a>
+        <a href="/sobre"> Sobre</a>
+        {% if session.usuario %}
+        <a class="btnLogin" href="/admin">Admin</a>
+        <a class="btnLogin" href="/sair">Sair</a>
+        {% else %}
+        <a class="BtnLogin" href="/entrar">Entrar</a>
+        {% endif %}
+    </div>
+    <link href="/static/style.css" rel="stylesheet">
+    <link href="/static/login.css" rel="stylesheet">
+</head>
+
+<body>
+    <br>
+    <br>
+<center>
+    <h1>Faça Login</h1>
+    <br>
+    <div class="form">
+        <form method="POST" novalidate action="/autenticar">
+            <label for="usuario"><h2> Nome de usuário</h2></label><br>
+            <input type="text" id="usuario" name="usuario" value="{{ request.form.usuario }}"><br>
+            <label for="lname"><h2>Senha</h2></label><br>
+            <input type="password" id="senha" name="senha" value="{{ request.form.senha }}" required><br><br>
+            <input type="submit" value="Entrar">
+        </form>
+    </div>
+</center>
+</body>

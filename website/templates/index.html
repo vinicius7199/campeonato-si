@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" type="imagem/png" href="../static/favicon.ico" />
+<head>
+    <title>Campeonato FIT | Home </title>
+    <div class="topnav">
+        <a class="campeonato">CAMPEONATO FIT</a>
+        <a class="active" href="/">Home</a>
+        <a href="/sobre"> Sobre</a>
+        {% if session.usuario %}
+        <a class="btnLogin" href="/admin">Admin</a>
+        <a class="btnLogin" href="/sair">Sair</a>
+        {% else %}
+        <a class="BtnLogin" href="/entrar">Entrar</a>
+        {% endif %}
+    </div>
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+   <center> 
+    <br>
+    <br> 
+    <br>  
+    <h2 >Tabela </h2>
+
+    <table class = "tabela" border = 2>
+    <thead>
+    <tr>
+        <th class = "tabela__head-times"> Classificação </th>
+        <th class = "tabela__head"> Pontos </th>
+        <th class = "tabela__head"> Vitorias </th>
+        <th class = "tabela__head"> Empates</th>
+        <th class = "tabela__head"> Derrotas</th>
+    </tr>
+</thead>
+
+<tbody>
+    <colgroup>
+        <col class="escuro">
+        <col class="claro">
+        <col class="escuro">
+        <col class="claro">
+        <col class="escuro">
+      </colgroup>
+    <tr class = "tabela__times">
+        <td> SÃO PAULO</td>
+        <td class = "tabela_dados"> 11</td>
+        <td class = "tabela_dados"> 3</td>
+        <td class = "tabela_dados"> 2</td>
+        <td class = "tabela_dados"> 1</td>
+    </tr>
+
+    <tr class = "tabela__times">
+        <td> CORINTHIANS</td>
+        <td class = "tabela_dados"> 5 </td>
+        <td class = "tabela_dados"> 1</td>
+        <td class = "tabela_dados"> 2</td>
+        <td class = "tabela_dados"> 3</td>
+    </tr>
+
+    <tr class = "tabela__times">
+        <td> SANTOS</td>
+        <td class = "tabela_dados"> 4 </td>
+        <td class = "tabela_dados"> 1</td>
+        <td class = "tabela_dados"> 3</td>
+        <td class = "tabela_dados"> 3</td>
+    </tr>
+</tbody>
+
+</table>
+</center>
+</body>
+
+</html>
