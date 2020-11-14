@@ -1,0 +1,161 @@
+{
+    "usuarios": [
+        {
+            "usuario": "admin",
+            "senha": "admin123"
+        },
+        {
+            "usuario": "usuario",
+            "senha": "usuario123"
+        }
+    ],
+    "equipes": [
+        {
+            "numequipe": "Equipe 1",
+            "sigla": "SAO",
+            "nome": "São Paulo-SP"
+        },
+        {
+            "numequipe": "Equipe 2",
+            "sigla": "RIO",
+            "nome": "Rio de Janeiro-RJ"
+        },
+        {
+            "numequipe": "Equipe 3",
+            "sigla": "MSG",
+            "nome": "Minas Gerais-MG"
+        },
+        {
+            "numequipe": "Equipe 4",
+            "sigla": "VIT",
+            "nome": "Vitória-ES"
+        },
+        {
+            "numequipe": "Equipe 5",
+            "sigla": "CAM",
+            "nome": "Campinas-SP"
+        }
+    ],
+    "partidas": [
+        {
+            "numeroequipe": "Equipe 1",
+            "numeroequipe2": "Equipe 2",
+            "golequipe1": 1,
+            "golequipe2": 2
+        },
+        {
+            "numeroequipe": "Equipe 2",
+            "numeroequipe2": "Equipe 1",
+            "golequipe1": 3,
+            "golequipe2": 4
+        },
+        {
+            "numeroequipe": "Equipe 1",
+            "numeroequipe2": "Equipe 3",
+            "golequipe1": 5,
+            "golequipe2": 6
+        },
+        {
+            "numeroequipe": "Equipe 3",
+            "numeroequipe2": "Equipe 1",
+            "golequipe1": 5,
+            "golequipe2": 3
+        },
+        {
+            "numeroequipe": "Equipe 1",
+            "numeroequipe2": "Equipe 4",
+            "golequipe1": 5,
+            "golequipe2": 2
+        },
+        {
+            "numeroequipe": "Equipe 4",
+            "numeroequipe2": "Equipe 1",
+            "golequipe1": 5,
+            "golequipe2": 3
+        },
+        {
+            "numeroequipe": "Equipe 1",
+            "numeroequipe2": "Equipe 5",
+            "golequipe1": 3,
+            "golequipe2": 5
+        },
+        {
+            "numeroequipe": "Equipe 5",
+            "numeroequipe2": "Equipe 1",
+            "golequipe1": 3,
+            "golequipe2": 1
+        },
+        {
+            "numeroequipe": "Equipe 2",
+            "numeroequipe2": "Equipe 3",
+            "golequipe1": 3,
+            "golequipe2": 5
+        },
+        {
+            "numeroequipe": "Equipe 3",
+            "numeroequipe2": "Equipe 2",
+            "golequipe1": 0,
+            "golequipe2": 1
+        },
+        {
+            "numeroequipe": "Equipe 1",
+            "numeroequipe2": "Equipe 2",
+            "golequipe1": 1,
+            "golequipe2": 2
+        },
+        {
+            "numeroequipe": "Equipe 2",
+            "numeroequipe2": "Equipe 1",
+            "golequipe1": 3,
+            "golequipe2": 4
+        },
+        {
+            "numeroequipe": "Equipe 1",
+            "numeroequipe2": "Equipe 3",
+            "golequipe1": 5,
+            "golequipe2": 6
+        },
+        {
+            "numeroequipe": "Equipe 3",
+            "numeroequipe2": "Equipe 1",
+            "golequipe1": 5,
+            "golequipe2": 3
+        },
+        {
+            "numeroequipe": "Equipe 5",
+            "numeroequipe2": "Equipe 4",
+            "golequipe1": 5,
+            "golequipe2": 2
+        },
+        {
+            "numeroequipe": "Equipe 3",
+            "numeroequipe2": "Equipe 2",
+            "golequipe1": 5,
+            "golequipe2": 3
+        },
+        {
+            "numeroequipe": "Equipe 4",
+            "numeroequipe2": "Equipe 3",
+            "golequipe1": 3,
+            "golequipe2": 5
+        },
+        {
+            "numeroequipe": "Equipe 3",
+            "numeroequipe2": "Equipe 5",
+            "golequipe1": 3,
+            "golequipe2": 1
+        },
+        {
+            "numeroequipe": "Equipe 4",
+            "numeroequipe2": "Equipe 5",
+            "golequipe1": 3,
+            "golequipe2": 5
+        },
+        {
+            "numeroequipe": "Equipe 4",
+            "numeroequipe2": "Equipe 5",
+            "golequipe1": 0,
+            "golequipe2": 1
+        }
+    ]
+}

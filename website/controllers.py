@@ -1,5 +1,6 @@
 from datetime import datetime
 from database.classes import Usuario
+from database.dados import EQUIPES
 from flask import Blueprint, flash, redirect, render_template, request, session
 
 site_bp = Blueprint(
@@ -13,9 +14,12 @@ site_bp = Blueprint(
 def index():
     return render_template('index.html')
 
-@site_bp.route('/admin')
-def admin():
-    return render_template('admin.html')
+@site_bp.route('/time/<sigla>')
+def time(sigla):
+    siglas = EQUIPES[0]
+    return render_template('time.html',
+    sigla = siglas
+    )
 
 @site_bp.route('/entrar')
 def entrar():
@@ -33,8 +37,9 @@ def autenticar():
         session['data'] = datetime.now().__str__()
         return redirect('/admin')
     else:
-        flash('Usuário ou senha incorretos!')
-        return redirect('/entrar')
+        erro = "Usuário ou senha inválidos"
+        return render_template('entrar.html',
+        mensagem = erro)
 
 @site_bp.route('/sobre')
 def sobre():
@@ -43,4 +48,6 @@ def sobre():
 @site_bp.route('/sair')
 def sair():
     session.clear()
-    return redirect('/')
+    erro = "Logout efetuado com sucesso!"
+    return render_template('entrar.html',
+    mensagem = erro)

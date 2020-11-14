@@ -1,5 +1,5 @@
 {
-    "usuarios":[
+    "usuarios": [
         {
             "usuario": "admin",
             "senha": "admin123"
@@ -7,6 +7,33 @@
         {
             "usuario": "usuario",
             "senha": "usuario123"
+        }
+    ],
+    "equipes": [
+        {
+            "numequipe": "Equipe 1",
+            "sigla": "SAO",
+            "nome": "São Paulo-SP"
+        },
+        {
+            "numequipe": "Equipe 2",
+            "sigla": "RIO",
+            "nome": "Rio de Janeiro-RJ"
+        },
+        {
+            "numequipe": "Equipe 3",
+            "sigla": "MSG",
+            "nome": "Minas Gerais-MG"
+        },
+        {
+            "numequipe": "Equipe 4",
+            "sigla": "VIT",
+            "nome": "Vitória-ES"
+        },
+        {
+            "numequipe": "Equipe 5",
+            "sigla": "CAM",
+            "nome": "Campinas-SP"
         }
     ]
 }

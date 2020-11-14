@@ -11,7 +11,7 @@
         <a class="btnLogin" href="/admin">Admin</a>
         <a class="btnLogin" href="/sair">Sair</a>
         {% else %}
-        <a class="BtnLogin" href="/entrar">Entrar</a>
+        <a class="btnLogin" href="/entrar">Entrar</a>
         {% endif %}
     </div>
     <link href="/static/style.css" rel="stylesheet">
@@ -22,6 +22,9 @@
     <br>
     <br>
 <center>
+    {% if mensagem %}
+    <h4 class = "deslogou"> {{ mensagem }}</h4>
+    {% endif %}
     <h1>Faça Login</h1>
     <br>
     <div class="form">

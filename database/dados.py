@@ -1,4 +1,4 @@
-from classes import Equipe, Partida, Usuario
+from .classes import Equipe, Partida, Usuario
 
 EQUIPES = [
     Equipe('Equipe 1', 'EQ1', 'São Paulo-SP'),
