@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="icon" type="imagem/png" href="../static/favicon.ico" />
+    <head>
+        <title>Campeonato FIT | Sobre </title>
+        <div class="topnav">
+            <a class="campeonato">CAMPEONATO FIT</a>
+            <a class="active" href="/">Home</a>
+            <a href="/sobre"> Sobre</a>
+            {% if session.usuario %}
+            <a class="btnLogin" href="/admin">Admin</a>
+            <a class="btnLogin" href="/sair">Sair</a>
+            {% else %}
+            <a class="btnLogin" href="/entrar">Entrar</a>
+            {% endif %}
+    </div>
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+<br>
+<br>
+<br>
+
+<body>
+    <center>
+    <div class="textosobre">
+        <h1>
+            Trabalho realizado por
+        </h1>
+        Vinícius de Andrade Fernandes - 1902740<br>
+        Rodrigo Lourenço Gomes - 1902857<br>
+        Higor Pereira Dos Santos - 1903206<br>
+        Enricky Oliveira Nascimento - 1902858<br>
+    </div>
+    </center>
+
+</body>

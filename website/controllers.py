@@ -50,4 +50,4 @@ def sair():
     session.clear()
     erro = "Logout efetuado com sucesso!"
     return render_template('entrar.html',
-    mensagem = erro)
+    logout = erro)
