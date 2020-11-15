@@ -35,7 +35,7 @@ class Equipe(object):
         self.local = local
 
     def __str__(self):
-        return f'{self.sigla}'
+        return f'{self.sigla} - {self.nome}'
 
     @classmethod
     def listar(cls):
@@ -65,8 +65,13 @@ class Equipe(object):
             original.nome = equipe.nome
             original.sigla = equipe.sigla
             original.local = equipe.local
-
         return erros
+
+    @classmethod
+    def remover(cls, sigla):
+        equipe = Equipe.obter(sigla)
+        if equipe:
+            Equipe.__dados.remove(equipe)
 
     @classmethod
     def __validar(cls, equipe, alteracao=False):
@@ -98,5 +103,54 @@ class Partida(object):
         return f'{self.equipe_casa} ({self.pontos_casa}) - {self.equipe_visita} ({self.pontos_visita})'
 
     @classmethod
+    def obter(cls, equipe_casa):
+        for c in Partida.__dados:
+            return c
+
+    @classmethod
     def listar(cls):
         return Partida.__dados
+
+    @classmethod
+    def criar(cls, equipe_casa, equipe_visita, pontos_casa, pontos_visita):
+        partida = cls(equipe_casa, equipe_visita, pontos_casa, pontos_visita)
+        erros = Partida.__validar(partida)
+
+        if len(erros) == 0:
+            Partida.__dados.append(partida)
+        return erros
+
+    @classmethod
+    def alterar(cls, equipe_casa, equipe_visita, pontos_casa, pontos_visita):
+        partida = cls(equipe_casa, equipe_visita, pontos_casa, pontos_visita)
+        erros = Partida.__validar(partida, True)
+
+        if len(erros) == 0:
+            original = Partida.obter(equipe.sigla)
+            original.nome = partida.equipe_casa
+            original.sigla = partida.equipe_visita
+            original.local = partida.pontos_casa
+            original.local = partida.pontos_visita
+        return erros
+
+    @classmethod
+    def remover(cls, equipe_casa):
+        partida = Partida.obter(equipe_casa)
+        if partida:
+            Partida.__dados.remove(equipe_casa)
+
+    @classmethod
+    def __validar(cls, partida):
+        erros = []
+        if not partida.equipe_casa:
+            erros.append('Nome do time de casa é obrigatório!')
+
+        if not partida.equipe_visita:
+            erros.append('Nome do time de casa é obrigatório!')
+
+        if not partida.pontos_casa:
+            erros.append('Pontos do time de casa é obrigatório!')
+
+        if not partida.pontos_visita:
+            erros.append('Pontos do time de casa é obrigatório!')
+        return erros    
