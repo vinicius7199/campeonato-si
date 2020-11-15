@@ -31,6 +31,8 @@
     <thead class="thead-dark">
     <tr>
         <th scope="col" class = "tabela__head-times" > Nome </th>
+        <th scope="col" class = "tabela__head-times" > Sigla </th>
+        <th scope="col" class = "tabela__head-times" > Local </th>
         <th scope="col"class = "tabela__head" > Ações </th>
 
     </tr>
@@ -44,50 +46,23 @@
         <col class="claro">
         <col class="escuro">
       </colgroup>
-<!--
-    <tr class = "tabela__times">
-        <td> SÃO PAULO</td>
-        <td>  <div><a href="/admin/times/alterar/{{time.sigla}}" >  <span class="btn btn-warning">Alterar Equipe</span></a></div>
-            <form method="POST" class="remover" action="/admin/time/remover/{{time.sigla}}">
-                        <button type="submit" class="btn btn-danger">Remover</button>
-                    </form>
-        </td>
-    </tr>
-
-    <tr class = "tabela__times">
-        <td> CORINTHIANS</td>
-        <td>  <div><a href="/admin/times/alterar/{{time.sigla}}" >  <span class="btn btn-warning">Alterar Equipe</span></a></div>
-            <form method="POST" class="remover" action="/admin/time/remover/{{time.sigla}}">
-                        <button type="submit" class="btn btn-danger">Remover</button>
-                    </form>
-        </td>
-    </tr>
-
-    <tr class = "tabela__times">
-        <td> SANTOS</td>
-        <td>  <div><a href="/admin/times/alterar/{{time.sigla}}" >  <span class="btn btn-warning">Alterar Equipe</span></a></div>
-            <form method="POST" class="remover" action="/admin/time/remover/{{time.sigla}}">
-                        <button type="submit" class="btn btn-danger">Remover</button>
-                    </form>
-        </td>
-    </tr>
--->
  {% for equipe in equipes %}
  <tr class = tabela__times">
-     <td> { { time.nome } }</td>
-     <td>  <div><a href="/admin/times/alterar/{{time.sigla}}" >  <span class="btn btn-warning">Alterar Equipe</span></a></div>
-        <form method="POST" class="remover" action="/admin/time/remover/{{time.sigla}}">
+     <td> {{ equipe['nome'] }}</td>
+     <td> {{ equipe['sigla'] }}</td>
+     <td> {{ equipe['local'] }}</td> 
+     <td>  <div><a href="/admin/equipes/alterar/{{equipe['sigla']}}" >  <span class="btn btn-warning">Alterar Equipe</span></a></div>
+        <form method="POST" class="remover" action="/admin/equipes/remover/{{equipe['sigla']}}">
                     <button type="submit" class="btn btn-danger">Remover</button>
-                </form>
-<!--     <td> { { equipe.sigla } }</td>
-     <td> { { equipe.local } }</td> -->
+                </form> 
  {% endfor %}
  </tr>
 </tbody>
 
 </table>
 <center>
-    <button type="button" class="btn btn-outline-primary" href = "/admin/equipes/criar">Adicionar uma nova equipe</button><br><br><br>
+    <a class="btn btn-outline-primary" href = "/admin">Voltar</a>
+    <a class="btn btn-outline-success" href = "/admin/equipes/criar">Adicionar uma nova equipe</a><br><br><br>
     </center>
 </body>
 

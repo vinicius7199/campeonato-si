@@ -1,6 +1,8 @@
 from flask import Blueprint, jsonify, redirect, request, render_template
 from database.classes import Usuario, Equipe, Partida
 from admin.decorators import login_required
+from database.funcoes import listar_equipes
+from database.funcoes import listar_partidas
 
 admin_bp = Blueprint('admin',__name__,template_folder='templates')
 
@@ -14,8 +16,9 @@ def admin():
 @admin_bp.route('/equipes')
 @login_required
 def equipes():
+    lista = listar_equipes()
     return render_template('/admin/equipes.html',
-        time = Equipe.listar()
+        equipes = lista
     )
 
 ########################## CRIAR EQUIPE ###############################
@@ -24,7 +27,6 @@ def equipes():
 def equipes_criar():
     equipe = {}
     erros = []
-    mensagem = "Equipe criada com sucesso!"
     if request.method == 'POST':
         equipe = request.form
         erros = Equipe.criar(
@@ -83,15 +85,16 @@ def equipes_verificar(sigla):
         resultado['existe'] = False
     else:
         resultado['existe'] = True
-        resultado['mensagem'] = f'Sigla {sigla} já em uso'
+        resultado['mensagem'] = f'Sigla {sigla} existe'
     return jsonify(resultado)
 
 ########################## PARTIDAS ###############################
 @admin_bp.route('/partidas')
 @login_required
 def partidas():
+    lista = listar_partidas()
     return render_template('/admin/partidas.html',
-        partida=Partida.listar()
+        partidas = lista
     )
 
 ########################## CRIAR PARTIDAS ###############################
@@ -119,14 +122,14 @@ def partidas_criar():
     )
 
 ########################## ALTERAR PARTIDAS ###############################
-@admin_bp.route('/partidas/alterar/<sigla>', methods=['GET', 'POST'])
+@admin_bp.route('/partidas/alterar/<timecasa>', methods=['GET', 'POST'])
 @login_required
-def partidas_alterar(sigla):
-    curso = Curso.obter(sigla)
+def partidas_alterar(timecasa):
+    partida = Partida.obter(timecasa)
     erros = []
     if request.method == 'POST':
-        curso = request.form
-        erros = Curso.alterar(
+        partida = request.form
+        erros = Partida.alterar(
             partida.get('timecasa'),
             partida.get('timefora'),
             partida.get('goltime1'),
@@ -134,12 +137,12 @@ def partidas_alterar(sigla):
         )
 
         if len(erros) == 0:
-            return redirect('/admin/equipes')
+            return redirect('/admin/partidas')
 
     return render_template(
-        'admin/partidas_forms.html',
-        curso=curso,
-        titulo=f'Alterar {equipe.sigla}',
+        'admin/partidas_form.html',
+        partida=partida,
+        titulo=f'Alterar',
         erros=erros
     )
 
@@ -160,5 +163,5 @@ def partidas_verificar(sigla):
         resultado['existe'] = False
     else:
         resultado['existe'] = True
-        resultado['mensagem'] = f'Sigla {sigla} já em uso'
+        resultado['mensagem'] = f'Sigla {sigla} existe'
     return jsonify(resultado)

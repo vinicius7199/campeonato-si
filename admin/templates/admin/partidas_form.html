@@ -40,15 +40,18 @@
         <input type="text" id="curso-nome" name="nome" value="{{partida.nome}}" required autofocus class="form-control" />
     </div><br>
     <div>
-        <label for="curso-sigla">Gols (Casa)</label>
+        <label for="curso-sigla">Pontos (Casa)</label>
         <input type="text" id="curso-sigla" name="sigla" value="{{partida.sigla}}" required  class="form-control"/>
     </div>
     <div><br>
-        <label for="curso-sigla">Gols (Fora)</label>
+        <label for="curso-sigla">Pontos (Fora)</label>
         <input type="text" id="curso-sigla" name="sigla" value="{{partida.sigla}}" required  class="form-control"/>
     </div><br>
-    <button type="button" class="btn btn-outline-primary">Voltar</button>
+    <a class="btn btn-outline-primary" href = "/admin/partidas">Voltar</a>
+    <button class="btn btn-outline-warning" type="reset" value="Reset">Limpar</button>
     <button type="submit" class="btn btn-outline-success">Salvar</button>
+    </div>
+    </form>
 </center>
 </body>
 

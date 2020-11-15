@@ -28,8 +28,10 @@
    <table class = "table" border = 2>
     <thead class="thead-dark">
     <tr>
-        <th scope="col" class = "tabela__head-times" > Times </th>
-        <th scope="col" class = "tabela__head" > Resultado </th>
+        <th scope="col" class = "tabela__head-times" > Time de Casa </th>
+        <th scope="col" class = "tabela__head-times" > Time de Fora </th>
+        <th scope="col" class = "tabela__head" > Gols Casa </th>
+        <th scope="col" class = "tabela__head" > Gols Fora </th>
         <th scope="col"class = "tabela__head" > Ações </th>
 
     </tr>
@@ -43,40 +45,27 @@
         <col class="claro">
         <col class="escuro">
       </colgroup>
-    <tr class = "tabela__times">
-        <td> SAN x PAL</td>
-        <td class = "tabela__head">2x1</td>
-        <td>  <div><a href="/admin/partidas/alterar/{{partida.sigla}}" >  <span class="btn btn-warning">Alterar Resultado</span></a></div>
-            <form method="POST" class="remover" action="/admin/partidas/remover/{{partida.sigla}}">
-                        <button type="submit" class="btn btn-danger">Remover </button>
-                    </form>
-        </td>
-    </tr>
 
-    <tr class = "tabela__times">
-        <td> COR x SAO</td>
-        <td class = "tabela__head">2x1</td>
-        <td>  <div><a href="/admin/partidas/alterar/{{partida.sigla}}" >  <span class="btn btn-warning">Alterar Resultado</span></a></div>
-            <form method="POST" class="remover" action="/admin/partidas/remover/{{partida.sigla}}">
-                        <button type="submit" class="btn btn-danger">Remover </button>
-                    </form>
-        </td>
+    {% for partida in partidas %}
+    <tr class = "tabela__times"> 
+        <td> {{partida['equipe_casa']}}</td>
+        <td> {{partida['equipe_visita']}}</td>
+        <td> {{partida['pontos_casa']}}</td>
+        <td> {{partida['pontos_visita']}}</td>
+        <td> 
+            <div>
+                <a href="/admin/partidas/alterar/{{partida['equipe_casa']}}" >  <span class="btn btn-warning">Alterar Resultado</span></a></div>
+            <form method="POST" class="remover" action="/admin/partidas/remover/{{partida['equipe_casa']}}">
+                <button type="submit" class="btn btn-danger">Remover</button>
+            </form> 
     </tr>
-
-    <tr class = "tabela__times">
-        <td> SAO x COR</td>
-        <td class = "tabela__head">2x1</td>
-        <td>  <div><a href="/admin/partidas/alterar/{{partida.sigla}}" >  <span class="btn btn-warning">Alterar Resultado</span></a></div>
-            <form method="POST" class="remover" action="/admin/partidas/remover/{{partida.sigla}}">
-                        <button type="submit" class="btn btn-danger">Remover </button>
-                    </form>
-        </td>
-    </tr>
+    {% endfor %}
 </tbody>
 
 </table>
 <center>
-    <button type="button" class="btn btn-outline-primary">Adicionar uma nova partida</button><br><br><br>
+    <a class="btn btn-outline-primary" href = "/admin">Voltar</a>
+    <a class="btn btn-outline-success" href = "/admin/partidas/criar">Adicionar uma nova partida</a><br><br><br>
 
     
     </center>
