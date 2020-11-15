@@ -40,3 +40,13 @@ input[type=submit] {
     background-color: #4CAF50; /* Green */
     color: white;
   }
+
+  .deslogou{
+    font-family: sans-serif;
+    color: red;
+  }
+
+  .sucesso{
+    font-family: sans-serif;
+    color: green;
+  }

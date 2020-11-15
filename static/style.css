@@ -5,6 +5,19 @@
   background-color: #c7c9c7;
 }
 
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-control{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
 .tabela {
     border-collapse: collapse;
 }
@@ -85,12 +98,9 @@
     
 }
 
-  .deslogou{
-    font-family: sans-serif;
-    color: red;
-  }
-
-  .sucesso{
-    font-family: sans-serif;
-    color: green;
+  .list-group-item {
+    width: 100%;
+    max-width: 440px;
+    padding: 15px;
+    margin: 0 auto;
   }
