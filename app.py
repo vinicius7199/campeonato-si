@@ -5,7 +5,7 @@ from admin.controllers import admin_bp
 from website.controllers import site_bp
 
 app = Flask(__name__)
-app.secret_key = 'DOKASKDSAOAKA'
+app.secret_key = 'SECRETKEYHERE'
 
 app.register_blueprint(site_bp)
 app.register_blueprint(admin_bp, url_prefix='/admin')
